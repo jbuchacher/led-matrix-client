@@ -52,20 +52,8 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKS-he-gQ2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="24"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </button>
-                                            </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="pKS-he-gQ2" secondAttribute="bottom" id="Ilz-Gq-DL4"/>
-                                            <constraint firstItem="pKS-he-gQ2" firstAttribute="top" secondItem="H1e-gL-ngG" secondAttribute="top" id="T2d-HV-KOa"/>
-                                            <constraint firstItem="pKS-he-gQ2" firstAttribute="leading" secondItem="H1e-gL-ngG" secondAttribute="leading" id="TuW-lx-YbQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="pKS-he-gQ2" secondAttribute="trailing" id="cld-ul-L3W"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
