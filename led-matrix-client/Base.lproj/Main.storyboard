@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,33 +23,76 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="khs-Bd-lOE">
-                                <rect key="frame" x="0.0" y="120" width="375" height="447"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g1W-xz-fs0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenseHat" translatesAutoresizingMaskIntoConstraints="NO" id="XqB-u6-YJ4">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenseHat" translatesAutoresizingMaskIntoConstraints="NO" id="XqB-u6-YJ4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XqB-u6-YJ4" secondAttribute="trailing" id="AkN-Uw-9JB"/>
+                                    <constraint firstItem="XqB-u6-YJ4" firstAttribute="leading" secondItem="khs-Bd-lOE" secondAttribute="leading" id="RNF-Dx-vv8"/>
+                                    <constraint firstItem="XqB-u6-YJ4" firstAttribute="top" secondItem="khs-Bd-lOE" secondAttribute="top" id="lwh-WH-3AN"/>
+                                    <constraint firstAttribute="bottom" secondItem="XqB-u6-YJ4" secondAttribute="bottom" id="ocd-Hd-YR0"/>
+                                </constraints>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AY4-vg-yfC">
+                                <rect key="frame" x="75" y="300" width="226" height="212"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="6" id="8xP-JS-5Is">
+                                    <size key="itemSize" width="22" height="22"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PixelCell" id="H1e-gL-ngG">
+                                        <rect key="frame" x="0.0" y="4" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKS-he-gQ2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="24"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="pKS-he-gQ2" secondAttribute="bottom" id="Ilz-Gq-DL4"/>
+                                            <constraint firstItem="pKS-he-gQ2" firstAttribute="top" secondItem="H1e-gL-ngG" secondAttribute="top" id="T2d-HV-KOa"/>
+                                            <constraint firstItem="pKS-he-gQ2" firstAttribute="leading" secondItem="H1e-gL-ngG" secondAttribute="leading" id="TuW-lx-YbQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="pKS-he-gQ2" secondAttribute="trailing" id="cld-ul-L3W"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="P4O-sF-WK4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="q74-14-F9z"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khs-Bd-lOE" secondAttribute="bottom" constant="100" id="5LO-e7-aw3"/>
-                            <constraint firstItem="khs-Bd-lOE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="G8M-SC-UtL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khs-Bd-lOE" secondAttribute="bottom" id="5LO-e7-aw3"/>
+                            <constraint firstItem="khs-Bd-lOE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="G8M-SC-UtL"/>
                             <constraint firstItem="khs-Bd-lOE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="P2r-GK-M38"/>
+                            <constraint firstItem="AY4-vg-yfC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="59" id="S8N-w9-QZh"/>
                             <constraint firstAttribute="trailing" secondItem="khs-Bd-lOE" secondAttribute="trailing" id="XW9-GI-gix"/>
+                            <constraint firstItem="AY4-vg-yfC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="280" id="aN9-JH-K4T"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AY4-vg-yfC" secondAttribute="bottom" constant="155" id="f9h-ox-dXX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AY4-vg-yfC" secondAttribute="trailing" constant="58" id="zpN-Cp-kqc"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="59.820089955022496"/>
         </scene>
     </scenes>
     <resources>
-        <image name="SenseHat" width="750" height="515"/>
+        <image name="SenseHat" width="515" height="750"/>
     </resources>
 </document>

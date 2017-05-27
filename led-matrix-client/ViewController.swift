@@ -10,6 +10,7 @@ import UIKit
 import SocketIO
 
 class ViewController: UIViewController {
+    fileprivate let reuseIdentifier = "PixelCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 8
+    }
 
+    func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                      for: indexPath)
+
+        return cell
+    }
 }
