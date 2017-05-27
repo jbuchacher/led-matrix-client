@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import SocketIO
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let socket = SocketIOClient(socketURL: URL(string: "http://127.0.0.1:3000")!, config: [.log(true), .forcePolling(true)])
+
+        socket.on(clientEvent: .connect) { data, ack in
+            print("socket connected")
+        }
+
+        socket.connect()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +30,3 @@ class ViewController: UIViewController {
 
 
 }
-
