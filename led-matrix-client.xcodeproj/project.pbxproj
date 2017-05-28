@@ -13,6 +13,7 @@
 		0322FE6E1EDA347A003FD55A /* PixelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0322FE6D1EDA347A003FD55A /* PixelController.swift */; };
 		0322FE6F1EDA347A003FD55A /* PixelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0322FE6D1EDA347A003FD55A /* PixelController.swift */; };
 		0322FE701EDA347A003FD55A /* PixelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0322FE6D1EDA347A003FD55A /* PixelController.swift */; };
+		0340722D1EDAA736008703E4 /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340722C1EDAA736008703E4 /* HSBColorPicker.swift */; };
 		036C0F691ED9602300B055F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C0F681ED9602300B055F8 /* AppDelegate.swift */; };
 		036C0F6B1ED9602300B055F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C0F6A1ED9602300B055F8 /* ViewController.swift */; };
 		036C0F6E1ED9602300B055F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036C0F6C1ED9602300B055F8 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0322FE691ED9FB9D003FD55A /* SocketIO */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SocketIO; sourceTree = "<group>"; };
 		0322FE6D1EDA347A003FD55A /* PixelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PixelController.swift; sourceTree = "<group>"; };
+		0340722C1EDAA736008703E4 /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		036C0F651ED9602300B055F8 /* led-matrix-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "led-matrix-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		036C0F681ED9602300B055F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		036C0F6A1ED9602300B055F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				036C0F711ED9602300B055F8 /* LaunchScreen.storyboard */,
 				036C0F741ED9602300B055F8 /* Info.plist */,
 				0322FE6D1EDA347A003FD55A /* PixelController.swift */,
+				0340722C1EDAA736008703E4 /* HSBColorPicker.swift */,
 			);
 			path = "led-matrix-client";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				036C0F6B1ED9602300B055F8 /* ViewController.swift in Sources */,
+				0340722D1EDAA736008703E4 /* HSBColorPicker.swift in Sources */,
 				036C0F691ED9602300B055F8 /* AppDelegate.swift in Sources */,
 				0322FE6E1EDA347A003FD55A /* PixelController.swift in Sources */,
 			);
