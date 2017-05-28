@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SocketIO
 
 enum PixelState: Int {
     case Off
