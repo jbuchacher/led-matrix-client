@@ -8,12 +8,24 @@
 
 import UIKit
 
+let b = UIColor.black
+
 class ViewController: UIViewController {
+    fileprivate let pixels = [
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+        Array(arrayLiteral: b, b, b, b, b, b, b, b),
+    ]
     fileprivate let reuseIdentifier = "PixelCell"
     var selectedIndexPath: IndexPath?
     var pixelController: PixelController?
     var colorPickerViewController: ColorPickerViewController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         pixelController = PixelController()
@@ -27,12 +39,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 8
+        return pixels.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return pixels[section].count
     }
 
     func collectionView(_ collectionView: UICollectionView,
