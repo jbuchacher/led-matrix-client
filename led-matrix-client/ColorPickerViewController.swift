@@ -10,12 +10,14 @@ import UIKit
 
 import UIKit
 
-class ColorPickerViewController: UIViewController, HSBColorPickerDelegate {
+class ColorPickerViewController: UIViewController {
     var indexPath: IndexPath?
     var pixelController: PixelController?
+    @IBOutlet weak var colorPickerView: HSBColorPicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorPickerView!.delegate = self
         pixelController = PixelController()
     }
 
@@ -23,11 +25,14 @@ class ColorPickerViewController: UIViewController, HSBColorPickerDelegate {
         super.didReceiveMemoryWarning()
     }
 
-    func HSBColorColorPickerTouched(sender:HSBColorPicker, color:UIColor, point:CGPoint, state:UIGestureRecognizerState) {
-        pixelController!.setPixel(path: indexPath!, state: .On, color: UIColor.blue)
-    }
-
     @IBAction func close() {
         self.dismiss(animated: true)
+    }
+}
+
+extension ColorPickerViewController: HSBColorPickerDelegate {
+    func HSBColorColorPickerTouched(sender:HSBColorPicker, color:UIColor, point:CGPoint, state:UIGestureRecognizerState) {
+        pixelController!.setPixel(path: indexPath!, state: .On, color: color)
+        dismiss(animated: true)
     }
 }
