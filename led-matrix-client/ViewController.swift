@@ -7,21 +7,15 @@
 //
 
 import UIKit
-import SocketIO
 
 class ViewController: UIViewController {
     fileprivate let reuseIdentifier = "PixelCell"
+    var pixelController: PixelController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let socket = SocketIOClient(socketURL: URL(string: "http://127.0.0.1:3000")!, config: [.log(true), .forcePolling(true)])
-
-        socket.on(clientEvent: .connect) { data, ack in
-            print("socket connected")
-        }
-
-        socket.connect()
+        pixelController = PixelController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,5 +44,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Clicked: \(indexPath.section), \(indexPath.row)")
+        pixelController!.setPixel(path: indexPath, state: .On, color: UIColor.blue)
     }
 }
