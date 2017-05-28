@@ -11,7 +11,7 @@ import UIKit
 let b = UIColor.black
 
 class ViewController: UIViewController {
-    fileprivate let pixels = [
+    fileprivate var pixels = [
         Array(arrayLiteral: b, b, b, b, b, b, b, b),
         Array(arrayLiteral: b, b, b, b, b, b, b, b),
         Array(arrayLiteral: b, b, b, b, b, b, b, b),
@@ -25,10 +25,12 @@ class ViewController: UIViewController {
     var selectedIndexPath: IndexPath?
     var pixelController: PixelController?
     var colorPickerViewController: ColorPickerViewController?
+    @IBOutlet weak var collectionView: UICollectionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         pixelController = PixelController()
+        pixelController!.initSocket()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +53,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath)
+        cell.backgroundColor = pixels[indexPath.section][indexPath.row]
 
         return cell
     }
@@ -69,5 +72,7 @@ extension ViewController: HSBColorPickerDelegate {
     func HSBColorColorPickerTouched(sender:HSBColorPicker, color:UIColor, point:CGPoint, state:UIGestureRecognizerState) {
         pixelController!.setPixel(path: selectedIndexPath!, state: .On, color: color)
         colorPickerViewController!.dismiss(animated: true)
+        pixels[(selectedIndexPath?.section)!][(selectedIndexPath?.row)!] = color
+        collectionView?.reloadItems(at: [selectedIndexPath!])
     }
 }

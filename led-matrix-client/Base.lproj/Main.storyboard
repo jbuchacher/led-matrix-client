@@ -107,6 +107,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="AY4-vg-yfC" secondAttribute="trailing" constant="60" id="zpN-Cp-kqc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="AY4-vg-yfC" id="7nZ-Nc-HiM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
