@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     fileprivate let reuseIdentifier = "PixelCell"
-
+    var selectedIndexPath: IndexPath?
+    var pixelController: PixelController?
+    var colorPickerViewController: ColorPickerViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        pixelController = PixelController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,9 +45,17 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Clicked: \(indexPath.section), \(indexPath.row)")
-        let colorPickerViewController = self.storyboard?.instantiateViewController(withIdentifier: "ColorPickerViewController") as! ColorPickerViewController
-        colorPickerViewController.indexPath = indexPath
+        selectedIndexPath = indexPath
+        colorPickerViewController = self.storyboard?.instantiateViewController(withIdentifier: "ColorPickerViewController") as? ColorPickerViewController
+        present(colorPickerViewController!, animated: true) {
+            self.colorPickerViewController!.colorPickerView!.delegate = self
+        }
+    }
+}
 
-        present(colorPickerViewController, animated: true)
+extension ViewController: HSBColorPickerDelegate {
+    func HSBColorColorPickerTouched(sender:HSBColorPicker, color:UIColor, point:CGPoint, state:UIGestureRecognizerState) {
+        pixelController!.setPixel(path: selectedIndexPath!, state: .On, color: color)
+        colorPickerViewController!.dismiss(animated: true)
     }
 }
