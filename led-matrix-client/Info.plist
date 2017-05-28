@@ -39,7 +39,7 @@
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>New item</key>
-			<string>http://127.0.0.1:3000</string>
+			<string>http://192.168.0.7:3000</string>
 		</dict>
 	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>

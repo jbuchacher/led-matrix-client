@@ -18,7 +18,7 @@ class PixelController: NSObject {
     let socket:SocketIOClient?
 
     override init() {
-        socket = SocketIOClient(socketURL: URL(string: "http://127.0.0.1:3000")!, config: [.log(true), .forcePolling(true)])
+        socket = SocketIOClient(socketURL: URL(string: "http://192.168.0.7:3000")!, config: [.log(true), .forcePolling(true)])
         socket!.on(clientEvent: .connect) { data, ack in
             print("socket connected")
         }
