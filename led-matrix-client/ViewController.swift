@@ -10,12 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     fileprivate let reuseIdentifier = "PixelCell"
-    var pixelController: PixelController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        pixelController = PixelController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +41,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Clicked: \(indexPath.section), \(indexPath.row)")
-        pixelController!.setPixel(path: indexPath, state: .On, color: UIColor.blue)
+        let colorPickerViewController = self.storyboard?.instantiateViewController(withIdentifier: "ColorPickerViewController") as! ColorPickerViewController
+        colorPickerViewController.indexPath = indexPath
+
+        present(colorPickerViewController, animated: true)
     }
 }
