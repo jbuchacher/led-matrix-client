@@ -70,7 +70,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AY4-vg-yfC">
-                                <rect key="frame" x="75" y="300" width="226" height="212"/>
+                                <rect key="frame" x="74" y="174" width="225" height="208"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="6" id="8xP-JS-5Is">
                                     <size key="itemSize" width="22" height="22"/>
@@ -100,11 +100,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="khs-Bd-lOE" secondAttribute="bottom" id="5LO-e7-aw3"/>
                             <constraint firstItem="khs-Bd-lOE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="G8M-SC-UtL"/>
                             <constraint firstItem="khs-Bd-lOE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="P2r-GK-M38"/>
-                            <constraint firstItem="AY4-vg-yfC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="59" id="S8N-w9-QZh"/>
+                            <constraint firstItem="AY4-vg-yfC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="S8N-w9-QZh"/>
                             <constraint firstAttribute="trailing" secondItem="khs-Bd-lOE" secondAttribute="trailing" id="XW9-GI-gix"/>
-                            <constraint firstItem="AY4-vg-yfC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="280" id="aN9-JH-K4T"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AY4-vg-yfC" secondAttribute="bottom" constant="155" id="f9h-ox-dXX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AY4-vg-yfC" secondAttribute="trailing" constant="58" id="zpN-Cp-kqc"/>
+                            <constraint firstItem="AY4-vg-yfC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="154" id="aN9-JH-K4T"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AY4-vg-yfC" secondAttribute="bottom" constant="285" id="f9h-ox-dXX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AY4-vg-yfC" secondAttribute="trailing" constant="60" id="zpN-Cp-kqc"/>
                         </constraints>
                     </view>
                 </viewController>
